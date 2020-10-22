@@ -2,8 +2,8 @@
  * action types
  */
 
-export const ADD_TODO = 'ADD_TODO'
-export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const ADD_ITEM = 'ADD_ITEM'
+export const TOGGLE_ITEM = 'TOGGLE_ITEM'
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
 
 /*
@@ -20,12 +20,12 @@ export const VisibilityFilters = {
  * action creators
  */
 
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
+export function addItem(title) {
+  return { type: ADD_ITEM, title }
 }
 
-export function toggleTodo(index) {
-  return { type: TOGGLE_TODO, index }
+export function toggleItem(index) {
+  return { type: TOGGLE_ITEM, index }
 }
 
 export function setVisibilityFilter(filter) {

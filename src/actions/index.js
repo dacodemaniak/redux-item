@@ -1,9 +1,9 @@
-let nextTodoId = 0
-export const addTodo = (text) => {
+let nextItemId = 0
+export const addItem = (title) => {
   return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
+    type: 'ADD_ITEM',
+    id: nextItemId++,
+    title
   }
 }
 
@@ -14,7 +14,7 @@ export const setVisibilityFilter = (filter) => {
   }
 }
 
-export const toggleTodo = (id) => {
+export const toggleItem = (id) => {
   return {
     type: 'TOGGLE_TODO',
     id

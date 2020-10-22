@@ -3,18 +3,18 @@ import FilterLink from '../containers/FilterLink'
 
 const Footer = () => (
   <p>
-    Show:
+    Voir :
     {" "}
     <FilterLink filter="SHOW_ALL">
-      All
+      Tous
     </FilterLink>
     {", "}
     <FilterLink filter="SHOW_ACTIVE">
-      Active
+      Restant
     </FilterLink>
     {", "}
     <FilterLink filter="SHOW_COMPLETED">
-      Completed
+      Vus
     </FilterLink>
   </p>
 )

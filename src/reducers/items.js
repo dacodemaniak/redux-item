@@ -1,10 +1,11 @@
-const todo = (state = {}, action) => {
+const item = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return {
         id: action.id,
-        text: action.text,
-        completed: false
+        title: action.text,
+        viewed: false,
+        rating: 0
       }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
@@ -12,7 +13,7 @@ const todo = (state = {}, action) => {
       }
 
       return Object.assign({}, state, {
-        completed: !state.completed
+        viewed: !state.viewed
       })
 
     default:
@@ -20,20 +21,20 @@ const todo = (state = {}, action) => {
   }
 }
 
-const todos = (state = [], action) => {
+const items = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case 'ADD_ITEM':
       return [
         ...state,
-        todo(undefined, action)
+        item(undefined, action)
       ]
-    case 'TOGGLE_TODO':
-      return state.map(t =>
-        todo(t, action)
+    case 'TOGGLE_ITEM':
+      return state.map(i =>
+        item(i, action)
       )
     default:
       return state
   }
 }
 
-export default todos
+export default items
